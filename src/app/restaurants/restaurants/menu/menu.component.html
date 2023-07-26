@@ -1,0 +1,49 @@
+<h3>{{restaurant.name}}</h3>
+<div class="row">
+    <div class="col-8">
+        <p>Working Hours:</p>
+        <ul>
+            <li *ngIf="restaurant.days['1'].opens">
+                Monday: {{restaurant.days["1"].opens}} - {{restaurant.days["1"].closes}}
+            </li>
+            <li *ngIf="restaurant.days['2'].opens">
+                Tuesday: {{restaurant.days["2"].opens}} - {{restaurant.days["2"].closes}}
+            </li>
+            <li *ngIf="restaurant.days['3'].opens">
+                Wednesday: {{restaurant.days["3"].opens}} - {{restaurant.days["3"].closes}}
+            </li>
+            <li *ngIf="restaurant.days['4'].opens">
+                Thursday: {{restaurant.days["4"].opens}} - {{restaurant.days["4"].closes}}
+            </li>
+            <li *ngIf="restaurant.days['5'].opens">
+                Friday: {{restaurant.days["5"].opens}} - {{restaurant.days["5"].closes}}
+            </li>
+            <li *ngIf="restaurant.days['6'].opens">
+                Saturday: {{restaurant.days["6"].opens}} - {{restaurant.days["6"].closes}}
+            </li>
+            <li *ngIf="restaurant.days['7'].opens">
+                Sunday: {{restaurant.days["7"].opens}} - {{restaurant.days["7"].closes}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-4">
+        <p>Address:</p>
+        {{restaurant.location}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-9">
+        <h4>Name</h4>
+        <div *ngFor="let item of menu.items">
+            <p>{{item.name}}</p>
+        </div>
+    </div>
+    <div class="col-3">
+        <h4>Price</h4>
+        <div *ngFor="let item of menu.items">
+            <p>{{item.price}}</p>
+        </div>
+    </div>
+</div>
+
+

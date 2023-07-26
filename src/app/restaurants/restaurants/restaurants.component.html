@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-4">
+        <app-pagination [page]="queryParams.page"
+        [pageSize]="queryParams.pageSize"
+        [collectionSize]="count" (pageChange)="onPageChanged($event)">
+            </app-pagination>
+    </div>
+    <div class="col-8">
+        <div class="row">
+        <div class="col-2">
+            <p>Price range: </p>
+        </div>
+        
+        <div class="col-5">
+            <input class="form-control" type="number" [formControl]="priceFromControl" (change)="onPriceChanged()">
+        </div>
+        <div class="col-5">
+            <input class="form-control" type="number" [formControl]="priceToControl" (change)="onPriceChanged()">
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4" *ngFor="let item of restaurants" >
+        <app-restaurant-item [restaurant]="item" [ocena]="item.rating" [novac]="item.price"></app-restaurant-item>
+    </div>
+</div>
+
+
